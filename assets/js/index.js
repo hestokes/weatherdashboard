@@ -18,3 +18,19 @@ function dayFormat(date) {
     day;
   return dayResult;
 }
+
+startApp();
+
+function startApp() {
+  var savedCities = JSON.parse(localStorage.getItem("cities"));
+
+  if (savedCities !== null) {
+    returnedCities = savedCities;
+  }
+
+  returnCities();
+}
+
+function saveCities() {
+  localStorage.setItem("cities", JSON.stringify(cities));
+}
