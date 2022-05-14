@@ -25,7 +25,7 @@ function startApp() {
   var savedCities = JSON.parse(localStorage.getItem("cities"));
 
   if (savedCities !== null) {
-    returnedCities = savedCities;
+    cities = savedCities;
   }
 
   returnCities();
@@ -33,4 +33,9 @@ function startApp() {
 
 function saveCities() {
   localStorage.setItem("cities", JSON.stringify(cities));
+  console.log(localStorage);
 }
+
+//next enter Function renturnCities()
+
+function returnCities()
