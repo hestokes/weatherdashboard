@@ -100,4 +100,32 @@ function getResponseWeather(cityName) {
     var CoordLong = response.coord.lon;
     var CoordLat = response.coord.lat;
 
-
+    //Api query for UV index
+    var queryURL2 =
+      "https://api.openweathermap.org/data/2.5/uvi?appid=" +
+      weatherApiKey +
+      "&lat=" +
+      CoordLat +
+      "&lon=" +
+      CoordLong;
+    $.ajax({
+      url: queryURL2,
+      method: "GET",
+    }).then(function (responseuv) {
+      var cityUV = $("<span>").text(responseuv.value);
+      var cityUVp = $("<p>").text("UV Index: ");
+      cityUVp.append(cityUV);
+      $("#today-weather").append(cityUVp);
+      console.log(typeof responseuv.value);
+      if (responseuv.value > 0 && responseuv.value <= 2) {
+        cityUV.attr("class", "green");
+      } else if (responseuv.value > 2 && responseuv.value <= 5) {
+        cityUV.attr("class", "yellow");
+      } else if (responseuv.value > 5 && responseuv.value <= 7) {
+        cityUV.attr("class", "orange");
+      } else if (responseuv.value > 7 && responseuv.value <= 10) {
+        cityUV.attr("class", "red");
+      } else {
+        cityUV.attr("class", "purple");
+      }
+    });
