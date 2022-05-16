@@ -38,4 +38,22 @@ function saveCities() {
 
 //next enter Function renturnCities()
 
-function returnCities()
+function returnCities() {
+  cityList.empty();
+
+  for (var i = 0; i < cities.length; i++) {
+    var city = cities[i];
+
+    var listEl = $("<li>").text(city.name);
+    listEl.attr("id", "listCi");
+    listEl.attr("data-city", city);
+    listEl.attr("class", "list-group-item");
+    console.log(listEl);
+    cityList.prepend(listEl);
+  }
+  if (!city) {
+    return;
+  } else {
+    getWeatherResponse(city);
+  }
+}
