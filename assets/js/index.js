@@ -44,7 +44,7 @@ function returnCities() {
   for (var i = 0; i < cities.length; i++) {
     var city = cities[i];
 
-    var listEl = $("<li>").text(city.name);
+    var listEl = $("<li>").text(city);
     listEl.attr("id", "listCi");
     listEl.attr("data-city", city);
     listEl.attr("class", "list-group-item");
@@ -84,8 +84,8 @@ function getWeatherResponse(cityName) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    cityName = $("<h3>").text(response.name + " " + dayFormat());
-    $("#today-weather").append(cityName);
+    cityTitle = $("<h3>").text(response.name + " " + dayFormat());
+    $("#today-weather").append(cityTitle);
     var tempAsNumber = parseInt((response.main.temp * 9) / 5 - 459);
     var cityTemp = $("<p>").text("Temperature: " + tempAsNumber + " °F");
     $("#today-weather").append(cityTemp);
@@ -101,7 +101,7 @@ function getWeatherResponse(cityName) {
     var CoordLat = response.coord.lat;
 
     //Api query for UV index
-    var queryURL2 =
+    var queryUvURL =
       "https://api.openweathermap.org/data/2.5/uvi?appid=" +
       weatherApiKey +
       "&lat=" +
@@ -109,7 +109,7 @@ function getWeatherResponse(cityName) {
       "&lon=" +
       CoordLong;
     $.ajax({
-      url: queryURL2,
+      url: queryUvURL,
       method: "GET",
     }).then(function (responseuv) {
       var cityUV = $("<span>").text(responseuv.value);
@@ -131,13 +131,13 @@ function getWeatherResponse(cityName) {
     });
 
     //Api query for 5-day forecast
-    var queryURL3 =
+    var queryFiveDayURL =
       "https://api.openweathermap.org/data/2.5/forecast?q=" +
       cityName +
       "&appid=" +
       weatherApiKey;
     $.ajax({
-      url: queryURL3,
+      url: queryFiveDayURL,
       method: "GET",
     }).then(function (response5day) {
       $("#boxes").empty();
