@@ -4,7 +4,6 @@ var weatherApiKey = "349f59965f00cd94141bf5e009d70cd5";
 
 function dayFormat(date) {
   var date = new Date();
-  console.log(date);
   var month = date.getMonth() + 1;
   var day = date.getDate();
 
@@ -33,7 +32,6 @@ function startApp() {
 
 function saveCities() {
   localStorage.setItem("cities", JSON.stringify(cities));
-  console.log(localStorage);
 }
 
 //next enter Function renturnCities()
@@ -48,7 +46,6 @@ function returnCities() {
     listEl.attr("id", "listCi");
     listEl.attr("data-city", city);
     listEl.attr("class", "list-group-item");
-    console.log(listEl);
     availableCities.prepend(listEl);
   }
   if (!city) {
@@ -116,17 +113,16 @@ function getWeatherResponse(cityName) {
       var cityUVp = $("<p>").text("UV Index: ");
       cityUVp.append(cityUV);
       $("#today-weather").append(cityUVp);
-      console.log(typeof responseuv.value);
       if (responseuv.value > 0 && responseuv.value <= 2) {
-        cityUV.attr("class", "green");
+        cityUV.attr("class", "juneBud");
       } else if (responseuv.value > 2 && responseuv.value <= 5) {
-        cityUV.attr("class", "yellow");
+        cityUV.attr("class", "lightGreenishBlue");
       } else if (responseuv.value > 5 && responseuv.value <= 7) {
-        cityUV.attr("class", "orange");
+        cityUV.attr("class", "shyMoment");
       } else if (responseuv.value > 7 && responseuv.value <= 10) {
-        cityUV.attr("class", "red");
+        cityUV.attr("class", "turbo");
       } else {
-        cityUV.attr("class", "purple");
+        cityUV.attr("class", "pinkGlamour");
       }
     });
 
@@ -141,7 +137,6 @@ function getWeatherResponse(cityName) {
       method: "GET",
     }).then(function (response5day) {
       $("#boxes").empty();
-      console.log(response5day);
       for (var i = 0, j = 0; j <= 5; i = i + 6) {
         var read_date = response5day.list[i].dt;
         if (response5day.list[i].dt != response5day.list[i + 1].dt) {
@@ -150,7 +145,6 @@ function getWeatherResponse(cityName) {
           var d = new Date(0);
           d.setUTCSeconds(read_date);
           var date = d;
-          console.log(date);
           var month = date.getMonth() + 1;
           var day = date.getDate();
           var dayOutput =
@@ -183,7 +177,6 @@ function getWeatherResponse(cityName) {
           }
 
           var pElTemperatureK = response5day.list[i].main.temp;
-          console.log(skyconditions);
           var temperatureAsNumber = parseInt((pElTemperatureK * 9) / 5 - 459);
           var pElTemperature = $("<p>").text(
             "Temperature: " + temperatureAsNumber + " °F"
@@ -196,7 +189,6 @@ function getWeatherResponse(cityName) {
           FivedayDiv.append(pElTemperature);
           FivedayDiv.append(pElHumidity);
           $("#boxes").append(FivedayDiv);
-          console.log(response5day);
           j++;
         }
       }

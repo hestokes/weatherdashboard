@@ -1,1 +1,21 @@
+ion-icon {
+  color: #dff9fb;
+  --ionicon-stroke-width: 80px;
+}
 
+.juneBud {
+  background-color: #badc58;
+}
+.lightGreenishBlue {
+  background-color: #55efc4;
+}
+.shyMoment {
+  background-color: #a29bfe;
+}
+.turbo {
+  background-color: #f9ca24;
+}
+
+.pinkGlamour {
+  background-color: #ff7979;
+}
