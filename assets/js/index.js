@@ -101,7 +101,7 @@ function getWeatherResponse(cityName) {
     var CoordLat = response.coord.lat;
 
     //Api query for UV index
-    varqueryUvIndex =
+    var queryURL2 =
       "https://api.openweathermap.org/data/2.5/uvi?appid=" +
       weatherApiKey +
       "&lat=" +
@@ -109,7 +109,7 @@ function getWeatherResponse(cityName) {
       "&lon=" +
       CoordLong;
     $.ajax({
-      url: queryUvIndex,
+      url: queryURL2,
       method: "GET",
     }).then(function (responseuv) {
       var cityUV = $("<span>").text(responseuv.value);
