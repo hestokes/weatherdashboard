@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-
+    <!-- Link to css  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -25,46 +27,36 @@
       src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <title>Your Travel Weather Dashboard!</title>
+    <title>Weather Dashboard</title>
   </head>
   <body>
-
     <div class="container">
-        
-        <div class="jumbotron-fluid bg-dark text-white text-center">
-          <div class="container">
-            <h1 class="display-4">Weather Dashboard</h1>
-          </div>
+      <div class="jumbotron-fluid bg-dark text-white text-center">
+        <div class="container">
+          <h1 class="display-4">Weather Dashboard</h1>
         </div>
-        
-        <div class="row">
-          
-          <div class="col-3 m-2 bg-light">
-            <h3>Search for your city here</h3>
-            <div class="input-group mb-2">
-              <input
-                type="text"
-                class="form-control"
-                id="city-input"
-                aria-describedby="basic-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  id="add-city"
-                  class="btn btn-outline-secondary bg-primary"
-                  type="button"
-                >
-                  <ion-icon name="search-outline"></ion-icon>
-                </button>
-              </div>
-  
-<!-- saved cities here -->
+      </div>
 
-
-
-
-
-
+      <div class="row">
+        <div class="col-3 m-2 bg-light">
+          <h3>Search for your city here:</h3>
+          <div class="input-group mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="city-input"
+              aria-describedby="basic-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                id="add-city"
+                class="btn btn-outline-secondary bg-primary"
+                type="button"
+              >
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
 
 
 
@@ -84,8 +76,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/index.js"></script>
-  </body>
-
+    <script src="/assets/js/index.js"></script>
   </body>
 </html>

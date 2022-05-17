@@ -39,7 +39,7 @@ function saveCities() {
 //next enter Function renturnCities()
 
 function returnCities() {
-  cityList.empty();
+  availableCities.empty();
 
   for (var i = 0; i < cities.length; i++) {
     var city = cities[i];
@@ -49,7 +49,7 @@ function returnCities() {
     listEl.attr("data-city", city);
     listEl.attr("class", "list-group-item");
     console.log(listEl);
-    cityList.prepend(listEl);
+    availableCities.prepend(listEl);
   }
   if (!city) {
     return;
@@ -72,7 +72,7 @@ $("#add-city").on("click", function (event) {
   returnCities();
 });
 
-function getResponseWeather(cityName) {
+function getWeatherResponse(cityName) {
   var queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
@@ -84,7 +84,7 @@ function getResponseWeather(cityName) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    cityName = $("<h3>").text(response.name + " " + FormatDay());
+    cityName = $("<h3>").text(response.name + " " + dayFormat());
     $("#today-weather").append(cityName);
     var tempAsNumber = parseInt((response.main.temp * 9) / 5 - 459);
     var cityTemp = $("<p>").text("Temperature: " + tempAsNumber + " °F");
@@ -206,5 +206,5 @@ function getResponseWeather(cityName) {
 
 $(document).on("click", "#listC", function () {
   var thisCity = $(this).attr("data-city");
-  getResponseWeather(thisCity);
+  getWeatherResponse(thisCity);
 });
