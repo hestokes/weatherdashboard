@@ -15,7 +15,7 @@
 
 - This app offers a simple tool to retrieve both the current weather, and a 5-day forecast for the city of your choosing. The app is designed to provide a clean user interface for city searches, and the return of clear and understandable search results.
 - Your Weather Dashboard! was built as a bootcamp challenge.
-- If you would like to use a live deployed version of Your Weather Dashboard, pleae click [here.]()
+- If you would like to use a live deployed version of Your Weather Dashboard, pleae click [here.](https://hestokes.github.io/weatherdashboard/)
 
 ## Features
 
@@ -31,7 +31,7 @@
 
 ![Your Weather Dashboard read to use](assets/images/weatherdashboardready.png?raw=true "Weather-Dashboard")
 ![City Search (Denver) Using Your Weather Dashboard](assets/images/weatherdashboardcitysearch.png?raw=true "Weather-Dashboard-Denver")
-![Weather Dashboard city search resutl](?raw=true)
+![City Search  Result (Denver)](assets/images/weatherdashboardcitysearchresult.png?raw=true "Weather-Dashboard-Denver")
 ![See your cities you have already searched (Denver/Sanfranciso)](assets/images/weatherdashboardsavedcity.png?raw=true "Weather-Dashboard-Saved-City")
 
 ## Technology
@@ -51,7 +51,7 @@ Your Weather Dashboard! was created utilizing the following:
 - [Favicon Help](https://www.w3schools.com/html/html_favicon.asp)
 - [Favicon Image courtesy of](https://freepngimg.com/png/76810-forecasting-weather-forecast-icon-free-frame)
 - [README guide](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
-- [Musical inspiration]()
+- [Musical inspiration](https://www.youtube.com/watch?v=9t1nGNKdIgE&t=982s)
 
 ## Contributing / Reporting issues
 
