@@ -15,7 +15,7 @@
 
 - This app offers a simple tool to retrieve both the current weather, and a 5-day forecast for the city of your choosing. The app is designed to provide a clean user interface for city searches, and the return of clear and understandable search results.
 - Your Weather Dashboard! was built as a bootcamp challenge.
-- If you would like to use a live deployed version of Your Weather Dashboard, pleae click [here.](https://hestokes.github.io/weatherdashboard/)
+- If you would like to use a live deployed version of Your Weather Dashboard, please click [here.](https://hestokes.github.io/weatherdashboard/)
 
 ## Features
 
